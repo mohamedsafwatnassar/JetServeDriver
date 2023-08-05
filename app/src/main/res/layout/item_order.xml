@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    android:background="@drawable/bg_gray"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardElevation="@dimen/_12sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txtStatusOrder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_6sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/txtDateOrder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/status" />
+
+            <TextView
+                android:id="@+id/txtDateOrder"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:drawablePadding="@dimen/_7sdp"
+                android:gravity="end|center_vertical"
+                android:paddingEnd="@dimen/_7sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_9ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/txtStatusOrder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txtStatusOrder"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="9:43 PM 10, june 2023" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgDriver"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_margin="@dimen/_7sdp"
+            android:background="@color/gray"
+            android:src="@drawable/ic_person"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraintStatus"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.CircleImage" />
+
+        <TextView
+            android:id="@+id/txtDriverName"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:padding="@dimen/_8sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@id/imgDriver"
+            app:layout_constraintEnd_toStartOf="@id/imgDriverPhone"
+            app:layout_constraintStart_toEndOf="@id/imgDriver"
+            app:layout_constraintTop_toTopOf="@id/imgDriver"
+            tools:text="Driver Not Assigned Yet" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgDriverPhone"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_margin="@dimen/_6sdp"
+            android:background="@drawable/bg_white"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_phone"
+            app:layout_constraintBottom_toBottomOf="@id/imgDriver"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtDriverName"
+            app:layout_constraintTop_toTopOf="@id/imgDriver" />
+
+        <TextView
+            android:id="@+id/txtDriverNotAssigned"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white_T"
+            android:gravity="center"
+            android:text="@string/driver_not_assigned_yet"
+            android:textColor="@color/darkRed"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/imgDriver"
+            app:layout_constraintTop_toBottomOf="@id/constraintStatus" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chipRecycler"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/txtReservedTime"
+            app:layout_constraintEnd_toEndOf="@id/imgDriverPhone"
+            app:layout_constraintStart_toStartOf="@id/imgDriver"
+            app:layout_constraintTop_toBottomOf="@id/imgDriver"
+            tools:listitem="@layout/item_zone" />
+
+        <TextView
+            android:id="@+id/txtReservedTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:gravity="start"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintStart_toStartOf="@id/chipRecycler"
+            app:layout_constraintTop_toBottomOf="@id/chipRecycler"
+            tools:text="Reserved Time" />
+
+        <TextView
+            android:id="@+id/txtSubCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:layout_marginBottom="@dimen/_9sdp"
+            android:gravity="start"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toTopOf="@id/txtTotalFees"
+            app:layout_constraintEnd_toEndOf="@id/chipRecycler"
+            app:layout_constraintTop_toBottomOf="@id/chipRecycler"
+            tools:text="Sub count" />
+
+        <TextView
+            android:id="@+id/txtTotalFees"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:gravity="end"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintStart_toStartOf="@id/txtReservedTime"
+            app:layout_constraintTop_toBottomOf="@id/txtReservedTime"
+            tools:text="Total Fees" />
+
+        <TextView
+            android:id="@+id/txtTotalPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:gravity="start"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/chipRecycler"
+            app:layout_constraintTop_toBottomOf="@id/txtReservedTime"
+            tools:text="Total Price" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

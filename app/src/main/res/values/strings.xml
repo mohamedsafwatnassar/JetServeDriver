@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">JetServeDriver</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_notification_permission">Notifications permission is disabled. please enable it to start using the app properly.</string>
+    <string name="required_permission">Required Permission</string>
+    <string name="allow">Allow</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="loading">Loading…</string>
+
+    <!-- View snack bar design strings -->
+    <string name="close">Close</string>
+    <string name="success">Success</string>
+    <string name="error">Error</string>
+
+    <!-- Splash screen strings -->
+    <string name="development_by">Development by</string>
+
+    <string name="status">Status</string>
+    <string name="driver_not_assigned_yet">Driver Not Assigned Yet</string>
+    <string name="price">Price</string>
+    <string name="fees">Fees</string>
+    <string name="zone">Zone</string>
+    <string name="destination">Destination</string>
+    <string name="client_phone">Client phone</string>
+    <string name="created_time">Created Time</string>
+    <string name="picked">Picked</string>
+    <string name="reserved_time">Reserved Time:</string>
+    <string name="total_amount">Total amount</string>
+    <string name="total_fees">Total fees</string>
+    <string name="total_price">Total price</string>
+
+</resources>

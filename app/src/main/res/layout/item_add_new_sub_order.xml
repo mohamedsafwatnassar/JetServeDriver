@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardItemAddOrder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_6sdp"
+    android:elevation="@dimen/_6sdp"
+    app:cardCornerRadius="@dimen/_6sdp"
+    app:cardElevation="@dimen/_6sdp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txtStatusOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_6sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:text="@string/picked"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/txtDateOrder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Created At" />
+
+            <TextView
+                android:id="@+id/txtDateOrder"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:drawablePadding="@dimen/_6sdp"
+                android:gravity="end|center_vertical"
+                android:paddingEnd="@dimen/_6sdp"
+                android:text="9:43 PM 10, june 2023"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_9ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/txtStatusOrder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txtStatusOrder"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintCreatedAt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_3sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgReceipt"
+            app:layout_constraintTop_toBottomOf="@id/constraintStatus">
+
+            <TextView
+                android:id="@+id/txtCreatedAt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:padding="@dimen/_4sdp"
+                android:text="@string/created_time"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintEnd_toStartOf="@id/txtCreatedAtDateOrder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtCreatedAtDateOrder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_time"
+                android:drawablePadding="@dimen/_5sdp"
+                android:gravity="end|center_vertical"
+                android:padding="@dimen/_4sdp"
+                android:text="9:43 PM 10, june 2023"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txtCreatedAt"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgReceipt"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="0dp"
+            android:background="@color/darkGreen_tra"
+            android:padding="@dimen/_28sdp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_camera"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraintStatus" />
+
+        <TextView
+            android:id="@+id/txtClientPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:fontFamily="@font/roboto_regular"
+            android:padding="@dimen/_4sdp"
+            android:text="@string/client_phone"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toStartOf="@id/edtClientPhone"
+            app:layout_constraintStart_toEndOf="@id/imgReceipt"
+            app:layout_constraintTop_toBottomOf="@id/constraintCreatedAt" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtClientPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:background="@null"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="01234567890"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:padding="@dimen/_4sdp"
+            android:textAllCaps="false"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toStartOf="@id/imgDriverPhone"
+            app:layout_constraintStart_toEndOf="@id/txtClientPhone"
+            app:layout_constraintTop_toBottomOf="@id/constraintCreatedAt" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgDriverPhone"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_21sdp"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/edtClientPhone"
+            app:layout_constraintTop_toBottomOf="@id/constraintCreatedAt" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtDestination"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:background="@null"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="@string/destination"
+            android:maxLines="1"
+            android:padding="@dimen/_4sdp"
+            android:textAllCaps="false"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgReceipt"
+            app:layout_constraintTop_toBottomOf="@id/imgDriverPhone" />
+
+        <TextView
+            android:id="@+id/txtZone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/zone"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintEnd_toStartOf="@id/txtZoneName"
+            app:layout_constraintStart_toEndOf="@id/imgReceipt"
+            app:layout_constraintTop_toBottomOf="@id/edtDestination" />
+
+        <TextView
+            android:id="@+id/txtZoneName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:padding="@dimen/_5sdp"
+            android:hint="Giza - 100 EGP"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtZone"
+            app:layout_constraintTop_toBottomOf="@id/edtDestination" />
+
+        <TextView
+            android:id="@+id/txtFeesPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:fontFamily="@font/roboto_regular"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/fees"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintEnd_toStartOf="@id/edtFeesPrice"
+            app:layout_constraintStart_toEndOf="@id/imgReceipt"
+            app:layout_constraintTop_toBottomOf="@id/txtZone" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtFeesPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:background="@null"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="1000"
+            android:inputType="number"
+            android:padding="@dimen/_4sdp"
+            android:textAllCaps="false"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toStartOf="@id/txtPrice"
+            app:layout_constraintStart_toEndOf="@id/txtFeesPrice"
+            app:layout_constraintTop_toBottomOf="@id/txtZone" />
+
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/price"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintEnd_toStartOf="@id/edtPrice"
+            app:layout_constraintStart_toEndOf="@id/edtFeesPrice"
+            app:layout_constraintTop_toBottomOf="@id/txtZone" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:background="@null"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="1000"
+            android:inputType="number"
+            android:padding="@dimen/_4sdp"
+            android:textAllCaps="false"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtPrice"
+            app:layout_constraintTop_toBottomOf="@id/txtZone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
